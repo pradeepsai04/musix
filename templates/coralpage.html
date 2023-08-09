@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>video editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet"> 
+<link rel="icon" type="image/png" href="https://cdn3.iconfinder.com/data/icons/multimedia-flat-colorful-long-shadow/614/1393_-_Video_Camera_I-512.png">
+<style>
+.header img{
+width:10%;
+height:10%;
+float:left;
+
+border-style:solid;
+}
+
+.header p{
+padding-top:2px;
+font-size:45px;
+font-family:'playball',cursive;
+}
+.header{
+padding-left:40%;
+margin-top:15px;
+}
+.tools{
+float:left;
+}
+.tools a{
+background-color:black;
+color:white;
+padding: 5px 5px 5px 5px;
+text-decoration:none;
+}
+.tools a:hover{
+color:black;
+background-color:white;
+padding: 5px 5px 5px 5px;
+text-decoration:none;
+}
+
+
+.video{
+  border-radius: 20%;
+  border-style:groove;
+}
+
+body{
+background-color:#073207; 
+background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
+border-style:groove;
+}
+
+</style>
+</head>
+<body>
+<div class="header">
+<img src="https://i.pinimg.com/originals/0c/cd/96/0ccd96bc52dc46b1f5f3ea89cad58ecb.gif">
+<p>Video editing</p>
+</div>
+<div class="tools">
+<br><a href="/black/">black&white  </a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/Mirror_x/">Mirror-x    </a>&nbsp;&nbsp;&nbsp;<br><br>
+<a href="/paint/">painting       </a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/Mirror_y/">Mirror-y      </a>&nbsp;&nbsp;&nbsp;<br><br>
+<a href="/invertcolors/">invert_colors   </a><br><br>
+<a href="/lumcontrast/">lum_contrast </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/timemirror/">time_mirror  </a><br><br>
+<a href="/evensize/">even size     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb</a>
+<a href="/trim/">trim the video and add audio</a>
+</div>
+<br><br>
+
+
+ <!--  #B1E6B1 -->
+
+
+
+
+
+
+
+
+
+<div class="file">
+<form method="post" action="" enctype="multipart/form-data">
+  {% csrf_token %}
+{{ form.as_p }}
+<button type="submit">upload here</button>
+</form>
+</div>
+
+
+{% for i in obj %}
+<div>
+    <h1>hello everyone</h1>
+<video controls="controls" width="50%" height="300">
+  <source src="/media/{{i.video}}" type="video/mp4" />
+</video>
+
+
+
+</div>
+{% endfor %}
+
+<div >
+  <h1>hello everyone</h1>
+<video controls="controls" width="100%" height="350" class="video">
+<source src="/media/{{vname}}" type="video/mp4" />
+</video>
+
+
+
+    
+
+</body>
+</html>

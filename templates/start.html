@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start 1</title>
+
+<style>
+  
+
+body{
+  background-color:#073207; 
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
+  border-style:groove;
+  }
+  
+
+
+
+
+</style>
+
+
+</head>
+<body>
+    
+    
+
+
+  <div class="file">
+    <form method="post" action="" enctype="multipart/form-data">
+      {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">upload here</button>
+    </form>
+    </div>
+    
+
+    
+</body>
+</html>
